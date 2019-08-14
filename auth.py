@@ -7,11 +7,11 @@ from . import db
 
 auth = Blueprint('auth', __name__)
 
-@auth.route('/login')
+@auth.route('/login-account')
 def login():
-  return render_template('login.html')
+  return render_template('login-account.html')
 
-@auth.route('/login', methods=['POST'])
+@auth.route('/login-account', methods=['POST'])
 def login_post():
   email = request.form.get('email')
   password = request.form.get('password')
@@ -27,15 +27,20 @@ def login_post():
 
   return redirect(url_for('main.profile'))
 
-@auth.route('/signup', methods=['GET'])
+@auth.route('/create-account', methods=['GET'])
 def signup():
-  return render_template('signup.html')
+  return render_template('create-account.html')
 
-@auth.route('/signup', methods=['POST'])
+@auth.route('/create-account', methods=['POST'])
 def signup_post():
-  email = request.form.get('email')
-  name = request.form.get('name')
-  password = request.form.get('password')
+  form = request.form
+
+  name = form["username"]
+  password = form["password1"]
+  password_2 = form["password2"]
+  email = form["email"]
+
+  # TODO ADD HTML FORM VALIDATION TO ENSURE PASSWORDS ARE THE SAME
 
   # Make sure user doesn't already exist
 

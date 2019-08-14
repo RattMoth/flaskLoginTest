@@ -45,9 +45,14 @@ def signup_post():
   # Make sure user doesn't already exist
 
   user = User.query.filter_by(email=email).first()
+  userName = User.query.filter_by(name=name).first()
 
   if user:
     flash('Email already exists.')
+    return redirect(url_for('auth.signup'))
+
+  if userName:
+    flash('Username already exists.')
     return redirect(url_for('auth.signup'))
 
   new_user = User(email=email, name=name, password=generate_password_hash(password, method='sha256'))
@@ -55,6 +60,7 @@ def signup_post():
   db.session.add(new_user)
   db.session.commit()
 
+  flash('Account created! Please log in.')
   return redirect(url_for('auth.login'))
 
 @auth.route('/logout')

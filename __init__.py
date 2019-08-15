@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 from . import whale
+from . import static
 
 db = SQLAlchemy()
 
@@ -40,5 +41,7 @@ def create_app():
 
   whale.init()
   whale.route(flask_app = app)
+
+  static.route(flask_app=app)
 
   return app

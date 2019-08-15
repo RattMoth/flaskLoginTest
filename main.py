@@ -21,4 +21,3 @@ def whale_page():
     room_id = whale.game.add_room()
     player_id = whale.game.add_player(room_id)
     return render_template("whale.html", game_id=game_id, room_id=room_id, player_id=player_id)
-    # return render_template("whale.html")

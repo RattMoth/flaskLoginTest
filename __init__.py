@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 from . import whale
-import static
+from . import static
 
 db = SQLAlchemy()
 

@@ -2,6 +2,9 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
+from . import whale
+import static
+
 db = SQLAlchemy()
 
 def create_app():

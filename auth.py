@@ -40,8 +40,6 @@ def signup_post():
   password_2 = form["password2"]
   email = form["email"]
 
-  # TODO ADD HTML FORM VALIDATION TO ENSURE PASSWORDS ARE THE SAME
-
   # Make sure user doesn't already exist
 
   user = User.query.filter_by(email=email).first()

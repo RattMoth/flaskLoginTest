@@ -39,7 +39,8 @@
                         id="password1" 
                         placeholder="Password" 
                         pattern="^\S{6,}$" 
-                        onchange="this.setCustomValidity(this.validity.patternMismatch ? alert('Must have at least 6 characters') : ''); if(this.checkValidity()) form.password2.pattern = this.value;" required>
+                        onchange="this.setCustomValidity(this.validity.patternMismatch ? alert('Must have at least 6 characters') : ''); if(this.checkValidity()) form.password2.pattern = this.value;" 
+                        required>
                   </div>
 
                   <div class="form-group row">
@@ -49,11 +50,17 @@
                         id="password2" 
                         placeholder="Veryify Password" 
                         pattern="^\S{6,}$" 
-                        onchange="this.setCustomValidity(this.validity.patternMismatch ? alert('Please enter the same Password as above') : '');" required>
+                        onchange="this.setCustomValidity(this.validity.patternMismatch ? alert('Passwords do not match. Please enter the same Password as above') : '');" 
+                        required>
                   </div>
 
                   <div class="form-group row">
-                     <input type="email" name="email"  class="form-control" id="email" placeholder="Email" required>
+                     <input type="email" 
+                        name="email"  
+                        class="form-control" 
+                        id="email" 
+                        placeholder="Email" 
+                        required>
                   </div>
 
                   <div class="text-center ">

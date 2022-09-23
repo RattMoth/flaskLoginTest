@@ -42,7 +42,7 @@ olefile==0.45.1
 pexpect==4.2.1
 Pillow==5.1.0
 postgres==2.2.2
-protobuf==3.0.0
+protobuf==3.18.3
 psycopg2-binary==2.8.3
 pycairo==1.16.2
 pycodestyle==2.5.0
